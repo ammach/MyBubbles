@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative"
+    tools:context="com.ammach.mybubbles.MainActivity">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="10dp"
+        android:clickable="false"
+        android:divider="@android:color/transparent"
+        android:listSelector="@android:color/transparent"
+        android:paddingBottom="50dp"
+        android:clipToPadding="false"
+        android:layout_marginTop="0dp"/>
+
+    <ImageView
+        android:id="@+id/imgAnim"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_back"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/emojiBtn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_action_emo_basic"
+            android:onClick="addEmoji"/>
+        <com.vanniktech.emoji.EmojiEditText
+            android:id="@+id/editMsg"
+            android:layout_width="0dp"
+            android:hint="Enter text message"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:imeOptions="actionSend"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="3"
+            app:emojiSize="26sp"/>
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_action_send"
+            android:onClick="addMesg"/>
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_action_youtube"
+            android:onClick="addImgVideo"/>
+    </LinearLayout>
+</RelativeLayout>
